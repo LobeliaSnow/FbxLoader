@@ -55,7 +55,7 @@ int main() {
 	//model = new FL::Model("test_stage_3.fbx");
 	//model = new FL::Model("sigotoninn.fbx");
 
-	int vertexSum = 0;
+	int vertexSum = -1;
 	std::vector<Vertex> vertices;
 	std::vector<Material> materials;
 	std::vector<int> delimiter;
