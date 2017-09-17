@@ -20,40 +20,24 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Source\AnimationTake\AnimationTake.cpp" />
+    <ClCompile Include="Source\Cluster\Cluster.cpp" />
+    <ClCompile Include="Source\Material\Material.cpp" />
+    <ClCompile Include="Source\Mesh\Mesh.cpp" />
+    <ClCompile Include="Source\Model\Model.cpp" />
+    <ClCompile Include="Source\Skin\Skin.cpp" />
+    <ClCompile Include="Source\System\System.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FbxLoader.h" />
-    <ClInclude Include="Header\AnimationTake\AnimationTake.h" />
-    <ClInclude Include="Header\Cluster\Cluster.h" />
-    <ClInclude Include="Header\Common.h" />
-    <ClInclude Include="Header\Material\Material.h" />
-    <ClInclude Include="Header\Mesh\Mesh.h" />
-    <ClInclude Include="Header\Model\Model.h" />
-    <ClInclude Include="Header\Skin\Skin.h" />
-    <ClInclude Include="Header\System\System.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Header\AnimationTake\AnimationTake.cpp">
-      <FileType>Document</FileType>
-    </ClCompile>
-    <ClCompile Include="Header\Cluster\Cluster.cpp">
-      <FileType>Document</FileType>
-    </ClCompile>
-    <ClCompile Include="Header\Material\Material.cpp">
-      <FileType>Document</FileType>
-    </ClCompile>
-    <ClCompile Include="Header\Mesh\Mesh.cpp">
-      <FileType>Document</FileType>
-    </ClCompile>
-    <ClCompile Include="Header\Model\Model.cpp">
-      <FileType>Document</FileType>
-    </ClCompile>
-    <ClCompile Include="Header\Skin\Skin.cpp">
-      <FileType>Document</FileType>
-    </ClCompile>
-    <ClCompile Include="Header\System\System.cpp">
-      <FileType>Document</FileType>
-    </ClCompile>
+    <ClInclude Include="Source\AnimationTake\AnimationTake.h" />
+    <ClInclude Include="Source\Cluster\Cluster.h" />
+    <ClInclude Include="Source\Common.h" />
+    <ClInclude Include="Source\Material\Material.h" />
+    <ClInclude Include="Source\Mesh\Mesh.h" />
+    <ClInclude Include="Source\Model\Model.h" />
+    <ClInclude Include="Source\Skin\Skin.h" />
+    <ClInclude Include="Source\System\System.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{4867ACAC-6E34-4307-906F-5DD2DF1CB0DB}</ProjectGuid>

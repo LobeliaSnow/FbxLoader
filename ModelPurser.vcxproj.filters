@@ -28,54 +28,52 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Header\Skin\Skin.cpp">
-      <Filter>Skin</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Header\Cluster\Cluster.cpp">
+    <ClCompile Include="Source\AnimationTake\AnimationTake.cpp">
+      <Filter>AnimationTake</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Cluster\Cluster.cpp">
       <Filter>Cluster</Filter>
     </ClCompile>
-    <ClCompile Include="Header\Material\Material.cpp">
+    <ClCompile Include="Source\Material\Material.cpp">
       <Filter>Material</Filter>
     </ClCompile>
-    <ClCompile Include="Header\Mesh\Mesh.cpp">
+    <ClCompile Include="Source\Mesh\Mesh.cpp">
       <Filter>Mesh</Filter>
     </ClCompile>
-    <ClCompile Include="Header\System\System.cpp">
+    <ClCompile Include="Source\Model\Model.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Skin\Skin.cpp">
+      <Filter>Skin</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\System.cpp">
       <Filter>System</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header\System\System.h">
-      <Filter>System</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Model\Model.h">
-      <Filter>Model</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Mesh\Mesh.h">
-      <Filter>Mesh</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Cluster\Cluster.h">
-      <Filter>Cluster</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Material\Material.h">
-      <Filter>Material</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\AnimationTake\AnimationTake.h">
+    <ClInclude Include="Source\AnimationTake\AnimationTake.h">
       <Filter>AnimationTake</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Skin\Skin.h">
+    <ClInclude Include="Source\Cluster\Cluster.h">
+      <Filter>Cluster</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Material\Material.h">
+      <Filter>Material</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mesh\Mesh.h">
+      <Filter>Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Model\Model.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Skin\Skin.h">
       <Filter>Skin</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Common.h" />
+    <ClInclude Include="Source\System\System.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common.h" />
     <ClInclude Include="FbxLoader.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Header\Model\Model.inl">
-      <Filter>Model</Filter>
-    </None>
-    <None Include="Header\AnimationTake\AnimationTake.inl">
-      <Filter>AnimationTake</Filter>
-    </None>
   </ItemGroup>
 </Project>

@@ -25,13 +25,13 @@ namespace FL {
 		int beginFrame = (int)(begin.Get() / period.Get());
 		int endFrame = (int)(end.Get() / period.Get());
 		int frameCount = endFrame - beginFrame;
-		int totalTime = end.GetMilliSeconds() - begin.GetMilliSeconds();
-		float bias = System::GetInstance()->sampleFramePerCount / fbxsdk::FbxTime::GetFrameRate(globalSetting.GetTimeMode());
-		int loopCount = frameCount*bias;
+		int totalTime = static_cast<int>(end.GetMilliSeconds() - begin.GetMilliSeconds());
+		float bias = System::GetInstance()->sampleFramePerCount / static_cast<float>(fbxsdk::FbxTime::GetFrameRate(globalSetting.GetTimeMode()));
+		int loopCount = static_cast<int>(frameCount*bias);
 		matrices.resize(static_cast<size_t>(loopCount));
 		for (int i = 0; i < loopCount; i++) {
 			fbxsdk::FbxMatrix matrix;
-			fbxsdk::FbxTime time = begin + period.Get() * (static_cast<float>(i) / 2.0f);
+			fbxsdk::FbxTime time = begin + period.Get() * static_cast<fbxsdk::FbxLongLong>((static_cast<float>(i) / 2.0f));
 			matrix = cluster->cluster->GetLink()->EvaluateGlobalTransform(time);
 			for (int row = 0; row < 4; row++) {
 				for (int column = 0; column < 4; column++) {
