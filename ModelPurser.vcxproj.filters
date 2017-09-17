@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Header">
+      <UniqueIdentifier>{60bd88ee-f875-4744-bf5a-7dff7d93c7de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Header\System">
+      <UniqueIdentifier>{5eb6d0a7-afc6-43d6-abda-a32a07bfbaca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Header\Model">
+      <UniqueIdentifier>{6fec02eb-6fc2-4a04-899b-08f1989414e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Header\Mesh">
+      <UniqueIdentifier>{66a4ee0a-f5e1-4b52-b020-a2cfc3258488}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Header\Skin">
+      <UniqueIdentifier>{3f4f968b-c6e8-4420-998a-1a4f322dd0d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Header\Cluster">
+      <UniqueIdentifier>{767a369e-95f7-4a2a-9ab8-bd15d1b50146}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Header\Material">
+      <UniqueIdentifier>{ced4ad26-81c2-4c98-8806-1a329a6f659b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FbxLoader.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Common.h">
+      <Filter>ヘッダー ファイル\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\System\System.h">
+      <Filter>ヘッダー ファイル\Header\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Model\Model.h">
+      <Filter>ヘッダー ファイル\Header\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Mesh\Mesh.h">
+      <Filter>ヘッダー ファイル\Header\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Skin\Skin.h">
+      <Filter>ヘッダー ファイル\Header\Skin</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Cluster\Cluster.h">
+      <Filter>ヘッダー ファイル\Header\Cluster</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Material\Material.h">
+      <Filter>ヘッダー ファイル\Header\Material</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Header\System\System.inl">
+      <Filter>ヘッダー ファイル\Header\System</Filter>
+    </None>
+    <None Include="Header\Model\Model.inl">
+      <Filter>ヘッダー ファイル\Header\Model</Filter>
+    </None>
+    <None Include="Header\Mesh\Mesh.inl">
+      <Filter>ヘッダー ファイル\Header\Mesh</Filter>
+    </None>
+    <None Include="Header\Skin\Skin.inl">
+      <Filter>ヘッダー ファイル\Header\Skin</Filter>
+    </None>
+    <None Include="Header\Cluster\Cluster.inl">
+      <Filter>ヘッダー ファイル\Header\Cluster</Filter>
+    </None>
+    <None Include="Header\Material\Material.inl">
+      <Filter>ヘッダー ファイル\Header\Material</Filter>
+    </None>
+  </ItemGroup>
+</Project>
