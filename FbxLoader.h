@@ -1,13 +1,13 @@
 #pragma once
-#include "Header\Common.h"
+#include "Source/Common.h"
 #include <fbxsdk.h>
 
 #pragma comment(lib,"libfbxsdk-md.lib")
 
-#include "Header\System\System.h"
-#include "Header\AnimationTake\AnimationTake.h"
-#include "Header\Cluster\Cluster.h"
-#include "Header\Skin\Skin.h"
-#include "Header\Mesh\Mesh.h"
-#include "Header\Material\Material.h"
-#include "Header\Model\Model.h"
+#include "Source/System/System.h"
+#include "Source/AnimationTake/AnimationTake.h"
+#include "Source/Cluster/Cluster.h"
+#include "Source/Skin/Skin.h"
+#include "Source/Mesh/Mesh.h"
+#include "Source/Material/Material.h"
+#include "Source/Model/Model.h"
