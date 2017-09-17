@@ -6,7 +6,7 @@
 #include <vector>
 
 namespace FL {
-	template<typename T>
+	template<class T>
 	class Singleton {
 	protected:
 		__forceinline Singleton()noexcept = default;
@@ -17,6 +17,13 @@ namespace FL {
 			return &inst;
 		}
 	};
+	template<class T>
+	__forceinline void SafeDelete(T* p) {
+		if (p) {
+			delete p;
+			p = nullptr;
+		}
+	}
 #ifdef _DEBUG
 	//‚±‚ê‚Í—áŠO”­¶‚Éw’è‚³‚ê‚½•û®‚Åî•ñ‚ğ•\¦‚·‚é
 #define __EXCEPTION_ON__
@@ -355,5 +362,7 @@ __forceinline Vector4 operator *(const Vector4& v1, float temp) { return Vector4
 __forceinline Vector4 operator /(const Vector4& v1, float temp) { return Vector4(v1.x / temp, v1.y / temp, v1.z / temp, v1.w + temp); }
 
 struct Matrix {
+public:
 	float mat[4][4] = {};
 };
+

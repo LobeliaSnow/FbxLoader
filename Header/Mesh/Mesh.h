@@ -39,5 +39,3 @@ namespace FL {
 		const std::string& GetMaterialName();
 	};
 }
-
-#include "Mesh.inl"

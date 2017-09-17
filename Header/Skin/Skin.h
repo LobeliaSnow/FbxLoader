@@ -12,5 +12,3 @@ namespace FL {
 		Cluster* GetCluster(int index);
 	};
 }
-
-#include "Skin.inl"

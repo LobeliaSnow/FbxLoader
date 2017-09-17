@@ -3,7 +3,7 @@ namespace FL {
 	class System :public Singleton<System> {
 		friend class Singleton<System>;
 		friend class Model;
-		friend class Cluster;
+		friend class AnimationTake;
 	private:
 		/**@brief fbxマネージャー*/
 		fbxsdk::FbxManager* manager = nullptr;
@@ -26,4 +26,3 @@ namespace FL {
 	};
 }
 
-#include "System.inl"

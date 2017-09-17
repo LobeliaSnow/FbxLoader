@@ -23,6 +23,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FbxLoader.h" />
+    <ClInclude Include="Header\AnimationTake\AnimationTake.h" />
     <ClInclude Include="Header\Cluster\Cluster.h" />
     <ClInclude Include="Header\Common.h" />
     <ClInclude Include="Header\Material\Material.h" />
@@ -32,12 +33,27 @@
     <ClInclude Include="Header\System\System.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Header\Cluster\Cluster.inl" />
-    <None Include="Header\Material\Material.inl" />
-    <None Include="Header\Mesh\Mesh.inl" />
-    <None Include="Header\Model\Model.inl" />
-    <None Include="Header\Skin\Skin.inl" />
-    <None Include="Header\System\System.inl" />
+    <ClCompile Include="Header\AnimationTake\AnimationTake.cpp">
+      <FileType>Document</FileType>
+    </ClCompile>
+    <ClCompile Include="Header\Cluster\Cluster.cpp">
+      <FileType>Document</FileType>
+    </ClCompile>
+    <ClCompile Include="Header\Material\Material.cpp">
+      <FileType>Document</FileType>
+    </ClCompile>
+    <ClCompile Include="Header\Mesh\Mesh.cpp">
+      <FileType>Document</FileType>
+    </ClCompile>
+    <ClCompile Include="Header\Model\Model.cpp">
+      <FileType>Document</FileType>
+    </ClCompile>
+    <ClCompile Include="Header\Skin\Skin.cpp">
+      <FileType>Document</FileType>
+    </ClCompile>
+    <ClCompile Include="Header\System\System.cpp">
+      <FileType>Document</FileType>
+    </ClCompile>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{4867ACAC-6E34-4307-906F-5DD2DF1CB0DB}</ProjectGuid>
@@ -130,6 +146,7 @@
       <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>C:\Program Files\Autodesk\FBX\FBX SDK\2017.1\include;C:\Program Files\Autodesk\FBX\FBX SDK\2016.1.1\include</AdditionalIncludeDirectories>
+      <MinimalRebuild>false</MinimalRebuild>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

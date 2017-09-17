@@ -26,5 +26,3 @@ namespace FL {
 
 	};
 }
-
-#include "Material.inl"
