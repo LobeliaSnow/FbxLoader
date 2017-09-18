@@ -53,13 +53,19 @@ namespace FL {
 	int Cluster::GetIndexCount() { return indexCount; }
 
 	int Cluster::GetImpactIndex(int index) { return indices[index]; }
+	
+	std::vector<int>& Cluster::GetImpactIndices() { return indices; }
 
 	float Cluster::GetWeight(int index) { return weights[index]; }
+	
+	std::vector<float> Cluster::GetWeights() { return weights; }
 
 	Matrix Cluster::GetInitPoseMatrix() { return initMatrix; }
 
 	int Cluster::GetAnimationCount() { return animationCount; }
 
 	AnimationTake* Cluster::GetAnimationTake(int index) { return animationTakes[index]; }
+
+	std::vector<AnimationTake*>& Cluster::GetAnimationTakes() { return animationTakes; }
 
 }

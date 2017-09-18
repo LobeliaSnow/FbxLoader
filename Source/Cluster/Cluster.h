@@ -19,10 +19,13 @@ namespace FL {
 		~Cluster();
 		int GetIndexCount();
 		int GetImpactIndex(int index);
+		std::vector<int>& GetImpactIndices();
 		float GetWeight(int index);
+		std::vector<float> GetWeights();
 		Matrix GetInitPoseMatrix();
 		int GetAnimationCount();
 		AnimationTake* GetAnimationTake(int index);
+		std::vector<AnimationTake*>& GetAnimationTakes();
 	};
 }
 

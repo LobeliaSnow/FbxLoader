@@ -8,7 +8,6 @@ namespace FL {
 		Vector3 ambient;
 		Vector3 diffuse;
 		Vector3 specular;
-
 	private:
 		void TakeTextures();
 		void TakeLayeredTextures(fbxsdk::FbxProperty& property,int layered_count);
@@ -20,6 +19,7 @@ namespace FL {
 		const std::string& GetName();
 		int GetTextureCount();
 		const std::string& GetTexture(int i);
+		const std::vector<std::string>& GetTextures();
 		const Vector3& GetAmbient();
 		const Vector3& GetDiffuse();
 		const Vector3& GetSpecular();

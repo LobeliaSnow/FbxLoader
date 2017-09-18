@@ -15,7 +15,6 @@ namespace FL {
 		TakeSkins();
 		TakeMaterialName();
 	}
-
 	Mesh::~Mesh() {
 		for (int i = 0; i < skinCount; i++) {
 			SafeDelete(skins[i]);
@@ -99,10 +98,15 @@ namespace FL {
 	int Mesh::GetIndexCount() { return indexCount; }
 	int Mesh::GetSkinCount() { return skinCount; }
 	const Vector3& Mesh::GetVertex(int index) { return vertices[index]; }
+	std::vector<Vector3>& Mesh::GetVertices() { return vertices; }
 	const Vector3& Mesh::GetNormal(int index) { return normals[index]; }
-	const Vector2& Mesh::GetUV(int index) { return uvs[index]; }
+	std::vector<Vector3>& Mesh::GetNormals() { return normals; }
 	int Mesh::GetIndexBuffer(int index) { return indices[index]; }
+	std::vector<int>& Mesh::GetIndices() { return indices; }
+	const Vector2& Mesh::GetUV(int index) { return uvs[index]; }
+	std::vector<Vector2>& Mesh::GetUVs() { return uvs; }
 	Skin* Mesh::GetSkin(int index) { return skins[index]; }
+	std::vector<Skin*>& Mesh::GetSkins() { return skins; }
 	const std::string& Mesh::GetMaterialName() { return materialName; }
 
 }

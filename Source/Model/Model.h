@@ -16,9 +16,11 @@ namespace FL {
 		~Model();
 		int GetMeshCount();
 		Mesh* GetMesh(size_t index);
+		std::vector<Mesh*>& GetMeshes();
 		int GetMaterialCount();
 		Material* GetMaterial(int i);
 		Material* GetMaterial(std::string name);
+		std::vector<Material*>& GetMaterials();
 	};
 }
 

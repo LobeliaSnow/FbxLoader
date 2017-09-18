@@ -18,6 +18,5 @@ namespace FL {
 	}
 	int Skin::GetClusterCount() { return clusterCount; }
 	Cluster* Skin::GetCluster(int index) { return clusters[index]; }
-
-
+	std::vector<Cluster*>& Skin::GetClusters() { return clusters; }
 }

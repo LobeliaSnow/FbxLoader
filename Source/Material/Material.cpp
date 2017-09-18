@@ -63,6 +63,7 @@ namespace FL {
 			else specular = Vector3();
 		}
 	}
+	const std::vector<std::string>& Material::GetTextures() { return textures; }
 	const Vector3& Material::GetAmbient() { return ambient; }
 	const Vector3& Material::GetDiffuse() { return diffuse; }
 	const Vector3& Material::GetSpecular() { return specular; }

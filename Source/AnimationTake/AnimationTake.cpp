@@ -13,9 +13,7 @@ namespace FL {
 		scene->SetCurrentAnimationStack(scene->GetSrcObject<FbxAnimStack>(index));
 		TakeAnimationMatices(scene);
 	}
-	AnimationTake::~AnimationTake() {
-
-	}
+	AnimationTake::~AnimationTake() = default;
 	void AnimationTake::TakeAnimationMatices(fbxsdk::FbxScene* scene) {
 		fbxsdk::FbxGlobalSettings &globalSetting = scene->GetGlobalSettings();
 		fbxsdk::FbxTime begin = takeInfo->mLocalTimeSpan.GetStart();
@@ -40,5 +38,8 @@ namespace FL {
 			}
 		}
 	}
+	const std::string& AnimationTake::GetTakeName() { return takeName; }
+	Matrix& AnimationTake::GetCurrentPoseMatrix(int index) { return matrices[index]; }
+	std::vector<Matrix>& AnimationTake::GetMatrices() { return matrices; }
 
 }

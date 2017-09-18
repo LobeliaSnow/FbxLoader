@@ -11,5 +11,8 @@ namespace FL {
 	public:
 		AnimationTake(Cluster* cluster, int index, fbxsdk::FbxTakeInfo* take_Info);
 		~AnimationTake();
+		const std::string& GetTakeName();
+		Matrix& GetCurrentPoseMatrix(int index);
+		std::vector<Matrix>& GetMatrices();
 	};
 }

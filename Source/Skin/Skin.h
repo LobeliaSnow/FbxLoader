@@ -10,5 +10,6 @@ namespace FL {
 		~Skin();
 		int GetClusterCount();
 		Cluster* GetCluster(int index);
+		std::vector<Cluster*>& GetClusters();
 	};
 }

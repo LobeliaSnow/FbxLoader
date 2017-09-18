@@ -53,14 +53,15 @@ namespace FL {
 		return scene->GetSrcObjectCount<FbxMesh>();
 	}
 	Mesh* Model::GetMesh(size_t index) { return (GetMeshCount() <= index ? nullptr : meshes[index]); }
+	std::vector<Mesh*>& Model::GetMeshes() { return meshes; }
 	int Model::GetMaterialCount() { return scene->GetMaterialCount(); }
 	Material* Model::GetMaterial(int i) { return materials[i]; }
-
 	Material* Model::GetMaterial(std::string name) {
 		for each(auto& material in materials) {
 			if (material->GetName() == name)return material;
 		}
 		return nullptr;
 	}
+	std::vector<Material*>& Model::GetMaterials() { return materials; }
 
 }

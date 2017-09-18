@@ -32,10 +32,15 @@ namespace FL {
 		int GetIndexCount();
 		int GetSkinCount();
 		const Vector3& GetVertex(int index);
+		std::vector<Vector3>& GetVertices();
 		const Vector3& GetNormal(int index);
-		const Vector2& GetUV(int index);
+		std::vector<Vector3>& GetNormals();
 		int GetIndexBuffer(int index);
+		std::vector<int>& GetIndices();
+		const Vector2& GetUV(int index);
+		std::vector<Vector2>& GetUVs();
 		Skin* GetSkin(int index);
+		std::vector<Skin*>& GetSkins();
 		const std::string& GetMaterialName();
 	};
 }
