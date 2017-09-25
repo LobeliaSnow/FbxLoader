@@ -87,7 +87,9 @@ namespace FL {
 		//if (materialCount > 1)STRICT_THROW("現在1Mesh辺りにつき複数のマテリアル割り当ては対応されていません\nシステム管理者に問い合わせ下さい");
 		//マテリアルごとにメッシュを分割しているために1メッシュあたり1マテリアルとなる
 		//for (int i = 0; i < materialCount; i++) {
-		fbxsdk::FbxSurfaceMaterial* material = node->GetMaterial(materialCount > 1 ? 1 : 0);
+		//fbxsdk::FbxSurfaceMaterial* material = node->GetMaterial(/*materialCount > 1 ? 1 : 0*/);
+		//現状マテリアルが複数見つかった場合でも、0番だけ採用。
+		fbxsdk::FbxSurfaceMaterial* material = node->GetMaterial(0);
 		materialName = material->GetName();
 		//}
 	}
