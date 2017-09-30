@@ -46,18 +46,32 @@ namespace FL {
 			}
 		}
 	}
+	//法線もマッピングモードとリファレンスモード確認したほうが良い。
 	void Mesh::TakeUVs() {
 		if (uvs.empty()) {
 			//uv
+			FbxGeometryElementUV* uv = mesh->GetElementUV(0);
+			FbxGeometryElement::EMappingMode mapping = uv->GetMappingMode();
+			FbxGeometryElement::EReferenceMode reference = uv->GetReferenceMode();
 			fbxsdk::FbxStringList uvNames;
 			fbxsdk::FbxArray<FbxVector2> uvsets;
 			mesh->GetUVSetNames(uvNames);
 			mesh->GetPolygonVertexUVs(uvNames.GetStringAt(0), uvsets);
 			uvCount = uvsets.Size();
 			uvs.resize(uvCount);
-			for (int i = 0; i < uvCount; i++) {
-				uvs[i].x = static_cast<float>(uvsets[i][0]);
-				uvs[i].y = static_cast<float>(1.0f - uvsets[i][1]);
+			if (reference == FbxGeometryElement::EReferenceMode::eIndexToDirect) {
+				FbxLayerElementArrayTemplate<int>* uvIndex = &uv->GetIndexArray();
+				int uvIndexCount = uvIndex->GetCount();
+				for (int i = 0; i < uvIndexCount; i++) {
+					uvs[i].x = static_cast<float>(uv->GetDirectArray().GetAt(uvIndex->GetAt(i))[0]);
+					uvs[i].y = static_cast<float>(1.0f - uv->GetDirectArray().GetAt(uvIndex->GetAt(i))[1]);
+				}
+			}
+			else if (reference == FbxGeometryElement::EReferenceMode::eDirect) {
+				for (int i = 0; i < uvCount; i++) {
+					uvs[i].x = static_cast<float>(uv->GetDirectArray().GetAt(i)[0]);
+					uvs[i].y = static_cast<float>(1.0f - uv->GetDirectArray().GetAt(i)[1]);
+				}
 			}
 		}
 	}
@@ -84,14 +98,11 @@ namespace FL {
 		fbxsdk::FbxNode* node = mesh->GetNode();
 		int materialCount = node->GetMaterialCount();
 		if (materialCount <= 0)STRICT_THROW("マテリアルが存在しない可能性があります");
-		//if (materialCount > 1)STRICT_THROW("現在1Mesh辺りにつき複数のマテリアル割り当ては対応されていません\nシステム管理者に問い合わせ下さい");
-		//マテリアルごとにメッシュを分割しているために1メッシュあたり1マテリアルとなる
-		//for (int i = 0; i < materialCount; i++) {
-		//fbxsdk::FbxSurfaceMaterial* material = node->GetMaterial(/*materialCount > 1 ? 1 : 0*/);
-		//現状マテリアルが複数見つかった場合でも、0番だけ採用。
-		fbxsdk::FbxSurfaceMaterial* material = node->GetMaterial(0);
-		materialName = material->GetName();
-		//}
+		auto element = mesh->GetElementMaterial(0);
+		auto& i = element->GetIndexArray();
+		auto first = i.GetFirst();
+		fbxsdk::FbxSurfaceMaterial* material = node->GetSrcObject<fbxsdk::FbxSurfaceMaterial>(first);
+		materialName = material->GetNameOnly();
 	}
 
 	int Mesh::GetVertexCount() { return vertexCount; }

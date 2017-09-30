@@ -39,6 +39,9 @@
     <ClInclude Include="Source\Skin\Skin.h" />
     <ClInclude Include="Source\System\System.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{4867ACAC-6E34-4307-906F-5DD2DF1CB0DB}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>

@@ -76,4 +76,7 @@
     <ClInclude Include="Source\Common.h" />
     <ClInclude Include="FbxLoader.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
 </Project>
