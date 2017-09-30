@@ -18,7 +18,6 @@ namespace FL {
 	private:
 		void Triangulate(fbxsdk::FbxScene* scene);
 		void SplitMesh(fbxsdk::FbxScene* scene);
-
 	public:
 		void Initialize();
 		void SetSampleFramePerCount(int sample_frame_per_count);

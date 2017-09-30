@@ -8,7 +8,7 @@ namespace FL {
 		std::vector<int> indices;
 		std::vector<Vector2> uvs;
 		std::string materialName;
-		int index;
+		//int index;
 		int vertexCount;
 		int normalCount;
 		int uvCount;
