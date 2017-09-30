@@ -5,22 +5,27 @@ int main() {
 	FL::System::GetInstance()->Initialize();
 
 	FL::Model* model = nullptr;
-	model = new FL::Model("Blue Falcon.FBX");
-
+	//model = new FL::Model("run.fbx");
+	model = new FL::Model("Iris_Costume.fbx");
+	
 	int meshCount = model->GetMeshCount();
 	int materialCount = model->GetMaterialCount();
-	for (int index = 0; index < materialCount; index++) {
-		FL::Material* material = model->GetMaterial(index);
-		auto test = material->GetTextures();
-		Sleep(0);
-	}
 	for (int index = 0; index < meshCount; index++) {
 		FL::Mesh* mesh = model->GetMesh(index);
 		auto test = mesh->GetMaterialName();
-		Sleep(0);
+		printf_s("%s\n", test.c_str());
+	}
+	for (int index = 0; index < materialCount; index++) {
+		FL::Material* material = model->GetMaterial(index);
+		auto test = material->GetTextures();
+		for (int i = 0; i < test.size(); i++) {
+			printf_s("%s\n", test[i].c_str());
+		}
 	}
 
 	FL::System::GetInstance()->Finalize();
+	rewind(stdin);
+	getchar();
 
 	return 0;
 }
