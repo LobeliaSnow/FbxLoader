@@ -1,11 +1,10 @@
 #include "FbxLoader.h"
-
 //’´’x‚¢B‰ü‘P‚¹‚æB
 int main() {
 	FL::System::GetInstance()->Initialize();
 
 	FL::Model* model = nullptr;
-	model = new FL::Model("humanoid.fbx");
+	model = new FL::Model("run.fbx");
 
 	int meshCount = model->GetMeshCount();
 	for (int index = 0; index < meshCount; index++) {
