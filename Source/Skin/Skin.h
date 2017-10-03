@@ -6,7 +6,7 @@ namespace FL {
 		int clusterCount;
 		std::vector<Cluster*> clusters;
 	public:
-		Skin(fbxsdk::FbxSkin* skin);
+		Skin(fbxsdk::FbxSkin* skin, fbxsdk::FbxMesh* mesh);
 		~Skin();
 		int GetClusterCount();
 		Cluster* GetCluster(int index);

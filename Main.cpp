@@ -5,8 +5,8 @@ int main() {
 	FL::System::GetInstance()->Initialize();
 
 	FL::Model* model = nullptr;
-	//model = new FL::Model("run.fbx");
-	model = new FL::Model("Iris_Costume.fbx");
+	model = new FL::Model("danbo_atk.fbx");
+	//model = new FL::Model("Iris_Costume.fbx");
 	
 	int meshCount = model->GetMeshCount();
 	int materialCount = model->GetMaterialCount();

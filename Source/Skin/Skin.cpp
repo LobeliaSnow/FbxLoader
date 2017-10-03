@@ -5,10 +5,10 @@
 #include "Skin.h"
 
 namespace FL {
-	Skin::Skin(fbxsdk::FbxSkin* skin) :skin(skin) {
+	Skin::Skin(fbxsdk::FbxSkin* skin, fbxsdk::FbxMesh* mesh) :skin(skin) {
 		clusterCount = skin->GetClusterCount();
 		for (int i = 0; i < clusterCount; i++) {
-			clusters.push_back(new Cluster(skin->GetCluster(i)));
+			clusters.push_back(new Cluster(skin->GetCluster(i), mesh));
 		}
 	}
 	Skin::~Skin() {

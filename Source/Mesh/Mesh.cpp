@@ -90,7 +90,7 @@ namespace FL {
 		for (int i = 0; i < count; i++) {
 			fbxsdk::FbxSkin* skin = static_cast<fbxsdk::FbxSkin*>(mesh->GetDeformer(i, fbxsdk::FbxDeformer::eSkin));
 			if (!skin)continue;
-			skins.push_back(new Skin(skin));
+			skins.push_back(new Skin(skin, mesh));
 			skinCount++;
 		}
 	}

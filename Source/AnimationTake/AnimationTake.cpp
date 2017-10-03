@@ -27,19 +27,28 @@ namespace FL {
 		float bias = System::GetInstance()->sampleFramePerCount / static_cast<float>(fbxsdk::FbxTime::GetFrameRate(globalSetting.GetTimeMode()));
 		int loopCount = static_cast<int>(frameCount*bias);
 		matrices.resize(static_cast<size_t>(loopCount));
+		referenceMatrices.resize(static_cast<size_t>(loopCount));
 		for (int i = 0; i < loopCount; i++) {
 			fbxsdk::FbxMatrix matrix;
-			fbxsdk::FbxTime time = begin + period.Get() * static_cast<fbxsdk::FbxLongLong>((static_cast<float>(i) / 2.0f));
+			fbxsdk::FbxTime time = static_cast<fbxsdk::FbxTime>(static_cast<float>(begin.Get()) + static_cast<float>(period.Get()) * (static_cast<float>(i) / bias));
 			matrix = cluster->cluster->GetLink()->EvaluateGlobalTransform(time);
 			for (int row = 0; row < 4; row++) {
 				for (int column = 0; column < 4; column++) {
 					matrices[i].mat[row][column] = static_cast<float>(matrix.GetRow(row)[column]);
 				}
 			}
+			matrix = cluster->mesh->GetNode()->EvaluateGlobalTransform(time);
+			for (int row = 0; row < 4; row++) {
+				for (int column = 0; column < 4; column++) {
+					referenceMatrices[i].mat[row][column] = static_cast<float>(matrix.GetRow(row)[column]);
+				}
+			}
 		}
 	}
 	const std::string& AnimationTake::GetTakeName() { return takeName; }
-	Matrix& AnimationTake::GetCurrentPoseMatrix(int index) { return matrices[index]; }
+	Matrix AnimationTake::GetCurrentPoseMatrix(int index) { return matrices[index]; }
+	Matrix AnimationTake::GetReferenceMatrix(int index) { return referenceMatrices[index]; }
+	int AnimationTake::GetMatrixSize() { return static_cast<int>(matrices.size()); }
 	std::vector<Matrix>& AnimationTake::GetMatrices() { return matrices; }
 
 }

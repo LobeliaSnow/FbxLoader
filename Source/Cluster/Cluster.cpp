@@ -5,7 +5,7 @@
 #include "../Cluster/Cluster.h"
 
 namespace FL {
-	Cluster::Cluster(fbxsdk::FbxCluster* cluster) :cluster(cluster) {
+	Cluster::Cluster(fbxsdk::FbxCluster* cluster, fbxsdk::FbxMesh* mesh) :cluster(cluster), mesh(mesh) {
 		TakeIndicesAndWeights();
 		TakeInitMatrix();
 		TakeAnimationTakes();
@@ -30,6 +30,12 @@ namespace FL {
 
 	void Cluster::TakeInitMatrix() {
 		FbxAMatrix temp;
+		cluster->GetTransformMatrix(temp);
+		for (int row = 0; row < 4; row++) {
+			for (int column = 0; column < 4; column++) {
+				referenceTransformMatrix.mat[row][column] = static_cast<float>(temp.GetRow(row)[column]);
+			}
+		}
 		cluster->GetTransformLinkMatrix(temp);
 		for (int row = 0; row < 4; row++) {
 			for (int column = 0; column < 4; column++) {
@@ -53,14 +59,16 @@ namespace FL {
 	int Cluster::GetIndexCount() { return indexCount; }
 
 	int Cluster::GetImpactIndex(int index) { return indices[index]; }
-	
+
 	std::vector<int>& Cluster::GetImpactIndices() { return indices; }
 
 	float Cluster::GetWeight(int index) { return weights[index]; }
-	
+
 	std::vector<float> Cluster::GetWeights() { return weights; }
 
 	Matrix Cluster::GetInitPoseMatrix() { return initMatrix; }
+
+	Matrix Cluster::GetReferenceTransformMatrix() { return referenceTransformMatrix; }
 
 	int Cluster::GetAnimationCount() { return animationCount; }
 
